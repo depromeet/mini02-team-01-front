@@ -2,7 +2,9 @@
 // var loader = require('./loader.js');
 let path = "login.js" + " / ";
 
-// document.write("<script src='./js/kakao.js'></script>");
+function loginSuccess() {
+  location.href = "selectCharacter.html";
+}
 
 function initKakaoApp(){
   console.log(path + "initKakaoApp");
@@ -36,6 +38,7 @@ function postUserInfoToServer(info){
     // 서버 FIX후에 api에 맞게 get token
     localStorage.setItem('jwtToken', result.data.token);
     console.log(localStorage.getItem('jwtToken'));    
+    loginSuccess();
   })
   .catch((error) => {
     console.log("fail")
@@ -49,13 +52,11 @@ function getUserDataToKakao(){
   Kakao.API.request({
         url: '/v1/user/me',
         success: (res) => {
-          alert("success")
           console.log("success");
           postUserInfoToServer(res);
         },
         fail: (res) => {
-          alert("fail")
-          //alert(JSON.stringify(error))
+          console.log(JSON.stringify(error))
         }
     });
 }
