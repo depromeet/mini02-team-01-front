@@ -1,22 +1,37 @@
+<style>
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        background:url('./img/index.png') no-repeat;
+        width: 1000px;
+        height: 720px;
+    }
+    .btn-login{
+      padding-top: 450px;
+      width: 471px;
+      height: 89px;
+    }
+</style>
+
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/loader.js"></script>
+    <script src="./js/Kakao.js"></script>
+    <script src="./js/login.js"></script>
     <title>Document</title>
 </head>
 <body>
-<center>
-<form action="">
-    로그인 해주세요~ (아직 구현 안됨) <br>
-    id : <input type="text"><br>
-    pw : <input type="password"><br>
-    <input type="submit" value="go~">
-</form>
-<button>카카오 로그인</button>
-<a href="index.html">첫 화면으로</a>
-<a href="selectCharacter.html">다음으로 넘어가기</a>
-</center>
+  <center>
+    <div class="wrapper">
+       <img class="btn-login"src="./img/btn_kakaotalk.png" onclick="loginWithKakao();">
+    </div>
+    <a href="index.html">첫 화면으로</a>       
+    <a href="selectCharacter.html">다음으로 넘어가기</a>
+  </center>
 </body>
 </html>
